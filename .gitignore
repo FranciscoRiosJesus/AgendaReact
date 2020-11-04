@@ -4,6 +4,7 @@
 /react-ui-agenda/node_modules
 /.pnp
 .pnp.js
+/my-app
 
 # testing
 /coverage

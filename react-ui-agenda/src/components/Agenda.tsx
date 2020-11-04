@@ -6,7 +6,7 @@ import Calendar from 'react-calendar';
 type Props = {
     //TODO CREATE MODEL AGENDA EXP
     id: number;
-    /* fechaInicioEvento: Date;
+    fechaInicioEvento: Date;/* 
     fechaFinEvento: Date;
     diaCompleto: boolean;
     descripcion: String;
@@ -20,7 +20,7 @@ type Props = {
 
 const Agenda: React.FC<Props> = ({
     id,
-    /* fechaInicioEvento,
+    fechaInicioEvento,/*
     fechaFinEvento,
     diaCompleto,
     descripcion,
@@ -40,6 +40,10 @@ const Agenda: React.FC<Props> = ({
                     1
                 </div>
             ))}
+            <Calendar 
+                /* onChange={this.onChange} */
+                value={fechaInicioEvento}
+            />
         </div>
     </div>
 );

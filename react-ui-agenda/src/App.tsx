@@ -12,6 +12,7 @@ const App = () => {
     1,
     2,
   ]
+  const fechaInicioEvento = new Date();
 
   console.log(fetchAgendasExp());
 
@@ -44,6 +45,7 @@ const App = () => {
       <p>Agenda de la Oficina</p>
       <Agenda 
         id={id}
+        fechaInicioEvento={fechaInicioEvento}
         actuacionExpIdList={actuacionExpIdList}
       ></Agenda>
     </div>
