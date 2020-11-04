@@ -1,7 +1,6 @@
 import React from 'react';
-import { EnumType } from 'typescript';
-import { TipoEventoAgenda } from '../Utils';
-import Calendar from 'react-calendar';
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
 
 type Props = {
     //TODO CREATE MODEL AGENDA EXP
@@ -37,13 +36,10 @@ const Agenda: React.FC<Props> = ({
         <div>
             {actuacionExpIdList.map(actuacionExpId => (
                 <div>
-                    1
+                    {actuacionExpId}
                 </div>
             ))}
-            <Calendar 
-                /* onChange={this.onChange} */
-                value={fechaInicioEvento}
-            />
+            <Calendar />
         </div>
     </div>
 );
