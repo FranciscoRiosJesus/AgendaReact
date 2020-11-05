@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Agenda from './components/Agenda';
 import { fetchAgendasExp } from './API';
-import { Console } from 'console';
 
 
 const App = () => {

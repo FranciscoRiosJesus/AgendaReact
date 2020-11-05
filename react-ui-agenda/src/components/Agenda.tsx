@@ -1,6 +1,6 @@
 import React from 'react';
 import Calendar from "react-calendar";
-import { TipoEventoAgenda } from './AgendaSlice'; 
+import { TipoEventoAgenda } from './agendaSlice'; 
 import 'react-calendar/dist/Calendar.css';
 
 export type AgendaExp = {

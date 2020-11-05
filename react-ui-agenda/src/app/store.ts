@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import agendaReducer from '../components/AgendaSlice';
+import agendaReducer from '../components/agendaSlice';
 
 export const store = configureStore({
   reducer: {
