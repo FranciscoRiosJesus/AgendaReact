@@ -1,6 +1,20 @@
 import React from 'react';
 import Calendar from "react-calendar";
+import { TipoEventoAgenda } from './AgendaSlice'; 
 import 'react-calendar/dist/Calendar.css';
+
+export type AgendaExp = {
+    id: number;
+    fechaInicioEvento: Date;
+    fechaFinEvento: Date;
+    diaCompleto: boolean;
+    descripcion: string;
+    expedienteId: number;
+    documentoExpId: number;
+    tipoEventoAgenda: TipoEventoAgenda;  
+    actuacionExpIdList: number[];
+    expedienteFusionId: number;
+}
 
 type Props = {
     //TODO CREATE MODEL AGENDA EXP

@@ -1,5 +1,13 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+/* import { AppThunk, RootState } from '../app/store'; */
 
-export type AgendaExp = {
+//TODO MOVER A SU PROPIO MODELO
+export enum TipoEventoAgenda {
+    TIPO_EVENTO_AGENDA_SUBASTA,
+    CODIGO_TIPO_ACTIVIDAD,
+}
+
+interface AgendasExp {
     id: number;
     fechaInicioEvento: Date;
     fechaFinEvento: Date;
@@ -10,13 +18,9 @@ export type AgendaExp = {
     tipoEventoAgenda: TipoEventoAgenda;  
     actuacionExpIdList: number[];
     expedienteFusionId: number;
-}
+  }
 
-export enum TipoEventoAgenda {
-    TIPO_EVENTO_AGENDA_SUBASTA,
-    CODIGO_TIPO_ACTIVIDAD,
-}
-
+//TODO Debe castearce a AgendaExp y Filtros
 const initialState = {
     agendasExp: [
         {   id: 0 , 
@@ -47,25 +51,31 @@ const initialState = {
     }
 }
 
-/* export default function agendaExpReducer(state = initialState, action) {
-    switch (action.type) {
-        case 'agendaExp/agendaExpAdded': {
-            return {
-                ...state,
-                agendasExp: [
-                    ...state.agendasExp,
-                    {
-                        id: nextAgendaId(state.agendasExp),
-                        text:  
-                    }
-                ]
-            }
+export const AgendaSlice = createSlice({
+    name: 'agendaExp',
+    initialState,
+    reducers: {
+        added: (state, action: PayloadAction<AgendasExp>) => {
+            state.agendasExp = [
+                ...state.agendasExp,
+                action.payload
+            ];
+        },
+        toggled: (state, action: PayloadAction<AgendasExp>) => {
+            state.agendasExp.map(agendaExp => {
+                if (agendaExp.id !== action.payload.id) {
+                    return agendaExp;
+                }
+
+                return {
+                    ...agendaExp,
+                    //TODO LO QUE SE QUIERA AGREGAR
+                }
+            })
         }
-    }
-} */
-/*  
-    {type: 'agendaExp/agendaExpAdded', payload: agenadaExp} 
-    {type: 'agendaExp/agendaExpToggled', payload: agendaExpId}
-    {type: 'agendaExp/agendaExpDeleted'. payload: agendaExpId}
-    {type: 'filters/statusFilterChanged', payload: filterValue}
-*/
+    },
+});
+
+export const { added } = AgendaSlice.actions;
+
+export default AgendaSlice.reducer;
