@@ -4,6 +4,7 @@ import Agenda from './components/Agenda';
 import { fetchAgendasExp } from './API';
 import { Console } from 'console';
 
+
 const App = () => {
 
   //MOCKS
