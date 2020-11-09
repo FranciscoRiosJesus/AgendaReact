@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-/* import { AppThunk, RootState } from '../app/store'; */
+import { AppThunk, RootState } from '../../app/store'; 
 
 //TODO MOVER A SU PROPIO MODELO
 export enum TipoEventoAgenda {
@@ -78,4 +78,7 @@ export const AgendaSlice = createSlice({
 
 export const { added } = AgendaSlice.actions;
 
+export const selectEventos = (state: RootState) => state.agendaExp;
+
 export default AgendaSlice.reducer;
+

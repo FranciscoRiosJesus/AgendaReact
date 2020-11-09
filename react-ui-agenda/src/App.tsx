@@ -1,8 +1,19 @@
 import React from 'react';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import Agenda from './components/Agenda';
+import Agenda from './features/agenda/Agenda';
 import { fetchAgendasExp } from './API';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+    },
+  }),
+);
 
 const App = () => {
 
@@ -29,19 +40,22 @@ const App = () => {
 
   }
 
-
+  const classes = useStyles();
   return (
     <div className="App">
       <h1>AGENDA</h1>
-      <ButtonBase className="start" onClick={startAgenda}>
-        Start
-      </ButtonBase>
-      <ButtonBase className="filtros" onClick={filtros}>
-        Filtros
-      </ButtonBase>
-      <ButtonBase className="anadirEvento" onClick={anadirEvento}>
-        Anadir Evento
-      </ButtonBase>
+      <div className={classes.root}>
+        <Button variant="contained" color="primary" className="start" onClick={startAgenda}>
+          Start
+        </Button >
+      
+        <Button variant="contained" color="primary"  className="filtros" onClick={filtros}>
+          Filtros
+        </Button>
+        <Button variant="contained" color="primary"  className="anadirEvento" onClick={anadirEvento}>
+          Anadir Evento
+        </Button>
+      </div>
       <p>Agenda de la Oficina</p>
       <Agenda 
         id={id}
