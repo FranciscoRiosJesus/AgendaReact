@@ -40,20 +40,31 @@ const App = () => {
 
   }
 
+  const listEvent = () => {
+
+  }
+
+  const listAlarmas = () => {
+
+  }
+
   const classes = useStyles();
   return (
     <div className="App">
       <h1>AGENDA</h1>
       <div className={classes.root}>
-        <Button variant="contained" color="primary" className="start" onClick={startAgenda}>
-          Start
+        <Button variant="contained" color="primary" className="start" onClick={filtros}>
+          Filtros
         </Button >
       
-        <Button variant="contained" color="primary"  className="filtros" onClick={filtros}>
-          Filtros
-        </Button>
-        <Button variant="contained" color="primary"  className="anadirEvento" onClick={anadirEvento}>
+        <Button variant="contained" color="primary"  className="filtros" onClick={anadirEvento}>
           Anadir Evento
+        </Button>
+        <Button variant="contained" color="primary"  className="anadirEvento" onClick={listEvent}>
+          Lista de eventos
+        </Button>
+        <Button variant="contained" color="primary"  className="anadirEvento" onClick={listAlarmas}>
+          Lista de alarmas
         </Button>
       </div>
       <p>Agenda de la Oficina</p>
