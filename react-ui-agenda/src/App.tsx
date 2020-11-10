@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import Agenda from './features/agenda/Agenda';
+import Agenda from './features/agenda/agendaEvento/Agenda';
 import { fetchAgendasExp } from './API';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';

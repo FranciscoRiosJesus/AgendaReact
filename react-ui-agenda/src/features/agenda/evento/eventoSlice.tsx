@@ -12,15 +12,30 @@ export interface Evento {
     editable: boolean;
 }
 
-const initialState: Evento = {
-    id: "0",
-    title: "title",
-    start: new Date(),
-    end: new Date(),
-    allDay: true,
-    url: "url",
-    className: "className",
-    editable: true,
+const initialState = {
+    eventos: [
+        {
+            id: "0",
+            title: "title",
+            start: new Date(),
+            end: new Date(),
+            allDay: true,
+            url: "url",
+            className: "className",
+            editable: true,
+        },
+        {
+            id: "1",
+            title: "title1",
+            start: new Date(),
+            end: new Date(),
+            allDay: true,
+            url: "url1",
+            className: "className1",
+            editable: true,
+        },
+    ]
+        
 }
 
 export const eventoSlice = createSlice({
@@ -43,6 +58,6 @@ export const eventoSlice = createSlice({
 
 export const { added } = eventoSlice.actions;
 
-export const selectCount = (state: RootState) => state.evento.value;
+export const selectEvento = (state: RootState) => state.evento;
 
 export default eventoSlice.reducer;

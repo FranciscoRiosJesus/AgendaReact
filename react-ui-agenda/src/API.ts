@@ -1,4 +1,4 @@
-import { AgendaExp } from './features/agenda/Agenda';
+import { AgendaExp } from './features/agenda/agendaEvento/Agenda';
 
 export const fetchAgendasExp = async () => {
     const endPoint = `https://localhost:8080/test/api/eventos`;

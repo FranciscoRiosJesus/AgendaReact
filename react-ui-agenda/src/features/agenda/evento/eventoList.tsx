@@ -1,18 +1,17 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 /* import EventoListItem from './eventoListItem';  */
-import { AppThunk, RootState } from '../../app/store';
+import { AppThunk, RootState } from '../../../app/store';
 
 
 
-const selectTodos = state => state.todos
+const selectEventos = (state: RootState) => state.evento;
 
 const TodoList = () => {
-  const todos = useSelector(selectTodos)
+  const eventos = useSelector(selectEventos)
 
-  // since `todos` is an array, we can loop over it
-  const renderedListItems = todos.map(todo => {
-    return <TodoListItem key={todo.id} todo={todo} />
+  const renderedListItems = eventos.map(evento => {
+    return <TodoListItem key={evento.id} evento={evento} />
   })
 
   return <ul className="todo-list">{renderedListItems}</ul>
