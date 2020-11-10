@@ -1,20 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
-
-    
-interface Evento {
-    id: string;
-    title: string;
-    start: Date;
-    end: Date;
-    allDay: boolean;
-    url: string;
-    className: String;
-    editable: boolean;
-}
-
-//TODO MOVER A SU RESPECTIVO .TSX
 interface AgendaEvento {
     id: number;
     idOficina: number;

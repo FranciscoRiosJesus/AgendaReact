@@ -10,7 +10,7 @@ node_modules/
 
 /.pnp
 .pnp.js
-/my-app
+#/my-app
 
 # testing
 /coverage
