@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import { store } from './app/store';
-import { TipoEventoAgenda } from './features/agenda/agendaEvento/agendaSlice';
+import { TipoEventoAgenda } from './features/agenda/agendaEvento/agendaEventoSlice';
 
 console.log('Initial state: ' , store.getState());
 

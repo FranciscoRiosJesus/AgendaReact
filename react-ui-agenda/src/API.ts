@@ -1,13 +1,12 @@
-import { AgendaExp } from './features/agenda/agendaEvento/Agenda';
+import { Evento } from './features/agenda/evento/eventoSlice';
 
-export const fetchAgendasExp = async () => {
-    const endPoint = `https://localhost:8080/test/api/eventos`;
+export const fetchEvento = async () => {
+    const endPoint = `http://localhost:8080/test/api/agendas/eventos?expedienteId=1&oficinaId=0`;
     const data = await (await fetch(endPoint)).json();
     console.log(data);
-    return data.results.map((agendaExp: AgendaExp) => (
+    return data.results.map((evento: Evento) => (
         {
-            ...agendaExp,
-
+            ...evento,
         }
     ));
 }

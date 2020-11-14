@@ -42,7 +42,7 @@ export const eventoSlice = createSlice({
     name: 'evento',
     initialState,
     reducers: {
-        added: (state, action: PayloadAction<Evento>) => {
+        eventoAdded: (state, action: PayloadAction<Evento>) => {
             state.eventos.map(evento => {
                 if (evento.id !== action.payload.id) {
                     return evento;
@@ -53,11 +53,24 @@ export const eventoSlice = createSlice({
                 }
             })
         },
+        eventoToggled: (state, action: PayloadAction<Evento>) => {
+            state.eventos.map(evento => {
+                if (evento.id !== action.payload.id) {
+                    return evento;
+                }
+
+                return {
+
+                    ...evento,
+                    //TODO LO QUE SE QUIERA AGREGAR
+                }
+            })
+        }
     },
 });
 
-export const { added } = eventoSlice.actions;
+export const { eventoAdded,  eventoToggled } = eventoSlice.actions;
 
-export const selectEvento = (state: RootState) => state.evento;
+export const selectEvento = (state: RootState) => state.eventos;
 
 export default eventoSlice.reducer;

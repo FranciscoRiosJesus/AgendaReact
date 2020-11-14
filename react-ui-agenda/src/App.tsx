@@ -1,7 +1,7 @@
 import React from 'react';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Agenda from './features/agenda/agendaEvento/Agenda';
-import { fetchAgendasExp } from './API';
+import { fetchEvento } from './API';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
@@ -25,7 +25,8 @@ const App = () => {
   ]
   const fechaInicioEvento = new Date();
 
-  console.log(fetchAgendasExp());
+  console.log('from API: ');
+  console.log(fetchEvento());
 
   //FUNCIONS
   const startAgenda = async () => {

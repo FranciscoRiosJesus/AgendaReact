@@ -1,42 +1,30 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { AppThunk, RootState } from '../../../app/store';
+import { Evento } from './eventoSlice';
 
-const selectTodoById = (state, todoId) => {
-    return state.todos.find(todo => todo.id === todoId)
+const selectTodoById = (state: RootState, idEvento: any) => {
+  return state.eventos.eventos.find(evento => evento.id === idEvento);
+}
+
+const EventoListItem = ({ id } : {id:any}) => {
+  const evento: Evento = useSelector(
+    (state:RootState) => selectTodoById(state, id))!;
+  const { start, end, allDay, url, className, editable } = evento;
+  
+  const dispatch = useDispatch()
+  
+  const handleCompletedChanged = () => {
+    dispatch({ type: 'eventos/eventoToggled', payload: evento.id })
   }
   
-  // Destructure `props.id`, since we only need the ID value
-  const TodoListItem = ({ id }) => {
-    // Call our `selectTodoById` with the state _and_ the ID value
-    const todo = useSelector(state => selectTodoById(state, id))
-    const { text, completed, color } = todo
+  return (
+    <li>
+      <div className="view">{}</div>
+    </li>
+  )
+}
   
-    const dispatch = useDispatch()
-  
-    const handleCompletedChanged = () => {
-      dispatch({ type: 'todos/todoToggled', payload: todo.id })
-    }
-  
-    // omit other change handlers
-    // omit other list item rendering logic and contents
-  
-    return (
-      <li>
-        <div className="view">{/* omit other rendering output */}</div>
-      </li>
-    )
-  }
-  
-  export default TodoListItem
-    
-/* interface Evento {
-    id: string;
-    title: string;
-    start: Date;
-    end: Date;
-    allDay: boolean;
-    url: string;
-    className: String;
-    editable: boolean;
-} */
+export default EventoListItem;
+
 

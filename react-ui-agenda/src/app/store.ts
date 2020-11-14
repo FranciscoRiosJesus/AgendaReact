@@ -1,12 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import agendaReducer from '../features/agenda/agendaEvento/agendaSlice';
+import agendaEventoReducer from '../features/agenda/agendaEvento/agendaEventoSlice';
 import eventoReducer from '../features/agenda/evento/eventoSlice';
 
 export const store = configureStore({
   reducer: {
     //TODO CAMBIAR POR agendaEvento
-    agendaExp: agendaReducer,
-    evento: eventoReducer,
+    agendaEventos: agendaEventoReducer,
+    eventos: eventoReducer,
   },
 });
 
